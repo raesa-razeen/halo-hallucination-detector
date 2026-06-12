@@ -8,12 +8,12 @@ Converts claim-level verdicts into a weighted document-level score.
 def calculate_fidelity_score(results: list[dict]) -> dict:
     """
     Calculate the Legal Fidelity Score from verification results.
-    
+
     Scoring logic:
-    - SUPPORTED         = 1.0 (fully grounded)
+    - SUPPORTED           = 1.0 (fully grounded)
     - PARTIALLY_SUPPORTED = 0.5 (partially grounded)
-    - NOT_SUPPORTED     = 0.0 (hallucinated)
-    
+    - NOT_SUPPORTED       = 0.0 (hallucinated)
+
     Returns overall score, per-claim breakdown, and hallucination summary.
     """
     if not results:
@@ -42,10 +42,7 @@ def calculate_fidelity_score(results: list[dict]) -> dict:
         elif verdict == "PARTIALLY_SUPPORTED":
             partial.append(r.get("claim", ""))
 
-    # Calculate percentage score
     fidelity_score = (total_score / len(results)) * 100
-
-    # Hallucination rate
     hallucination_rate = (len(hallucinated) / len(results)) * 100
 
     return {
@@ -67,12 +64,12 @@ def print_audit_report(results: list[dict], score_data: dict):
     print("         HALO AUDIT REPORT")
     print("=" * 60)
 
-    print(f"\n📊 LEGAL FIDELITY SCORE: {score_data['fidelity_score']}%")
-    print(f"🚨 HALLUCINATION RATE:   {score_data['hallucination_rate']}%")
-    print(f"📋 TOTAL CLAIMS:         {score_data['total_claims']}")
-    print(f"✅ SUPPORTED:            {score_data['supported_count']}")
-    print(f"⚠️  PARTIALLY SUPPORTED: {score_data['partial_count']}")
-    print(f"❌ HALLUCINATED:         {score_data['hallucinated_count']}")
+    print(f"\nLEGAL FIDELITY SCORE: {score_data['fidelity_score']}%")
+    print(f"HALLUCINATION RATE:   {score_data['hallucination_rate']}%")
+    print(f"TOTAL CLAIMS:         {score_data['total_claims']}")
+    print(f"SUPPORTED:            {score_data['supported_count']}")
+    print(f"PARTIALLY SUPPORTED:  {score_data['partial_count']}")
+    print(f"HALLUCINATED:         {score_data['hallucinated_count']}")
 
     print("\n" + "-" * 60)
     print("CLAIM-LEVEL BREAKDOWN:")
@@ -80,18 +77,18 @@ def print_audit_report(results: list[dict], score_data: dict):
 
     for i, r in enumerate(results, 1):
         verdict = r.get("verdict", "N/A")
-        icon = "✅" if verdict == "SUPPORTED" else "❌" if verdict == "NOT_SUPPORTED" else "⚠️"
-        print(f"\n{icon} Claim {i}: {r.get('claim', '')}")
+        label = "[SUPPORTED]" if verdict == "SUPPORTED" else "[NOT SUPPORTED]" if verdict == "NOT_SUPPORTED" else "[PARTIAL]"
+        print(f"\n{label} Claim {i}: {r.get('claim', '')}")
         print(f"   Verdict:  {verdict}")
         print(f"   Reason:   {r.get('reason', 'N/A')}")
         print(f"   Evidence: {r.get('evidence', 'N/A')}")
 
     if score_data["hallucinated_claims"]:
         print("\n" + "-" * 60)
-        print("🚨 HALLUCINATED CLAIMS FLAGGED:")
+        print("HALLUCINATED CLAIMS FLAGGED:")
         print("-" * 60)
         for c in score_data["hallucinated_claims"]:
-            print(f"  • {c}")
+            print(f"  - {c}")
 
     print("\n" + "=" * 60)
 
@@ -111,7 +108,7 @@ if __name__ == "__main__":
     Payment must be made within 15 days. The contract renews automatically
     every year. Either party can terminate with 60 days notice."""
 
-    print("🔍 HALO - Running Full Analysis...\n")
+    print("HALO - Running Full Analysis...\n")
 
     chunks = chunk_document(contract)
     claims = split_claims(summary)

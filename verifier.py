@@ -39,7 +39,7 @@ def build_vector_store(chunks: list[str], collection_name: str = "halo_docs"):
         embeddings=embeddings,
         ids=[f"chunk_{i}" for i in range(len(chunks))]
     )
-    print(f"✅ Vector store built with {len(chunks)} chunks")
+    print(f"Vector store built with {len(chunks)} chunks")
     return collection
 
 
@@ -114,7 +114,7 @@ if __name__ == "__main__":
     collection = build_vector_store(chunks)
 
     # Stage 2 - Verify each claim
-    print("\n📋 VERIFICATION RESULTS:\n")
+    print("\n VERIFICATION RESULTS:\n")
     for i, claim in enumerate(claims, 1):
         evidence = retrieve_evidence(claim, collection)
         result = verify_claim(claim, evidence)
