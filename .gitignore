@@ -1,0 +1,20 @@
+# Environment variables - never push this
+.env
+
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# ChromaDB local storage
+chroma/
+
+# HuggingFace cache
+*.bin
+*.safetensors
+
+# VS Code settings
+.vscode/
