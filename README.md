@@ -1,4 +1,4 @@
-# HALO — Hallucination Audit Layer for Official Documents
+# HALO - Hallucination Audit Layer for Official Documents
 
 > An open-source hallucination detection framework for high-stakes documents.  
 > Implements the **Legal Fidelity Score** from published ICCIC-2025 research.
@@ -8,7 +8,7 @@
 ## The Problem
 
 Large Language Models (LLMs) hallucinate. In most contexts this is inconvenient.  
-In legal, medical, financial, and clinical documents — it is dangerous.
+In legal, medical, financial, and clinical documents - it is dangerous.
 
 A payment term changed from 30 days to 15 days. A renewal clause invented from nothing. A liability limit silently altered. These are not hypothetical — they are the kinds of errors that cause lawsuits, regulatory violations, and financial loss.
 
@@ -120,7 +120,7 @@ HALO is the first open-source implementation of the **Legal Fidelity Score** int
 > *"A Survey and Framework for Context-Aware Legal Contract Summarization Using Large Language Models"*  
 > Raesa Razeen · ICCIC-2025 · First Author · Peer Reviewed & Published
 
-The Legal Fidelity Score addresses a critical gap in NLP evaluation — standard metrics measure lexical overlap, not legal accuracy. HALO extends this metric into a production-grade, domain-agnostic verification system.
+The Legal Fidelity Score addresses a critical gap in NLP evaluation - standard metrics measure lexical overlap, not legal accuracy. HALO extends this metric into a production-grade, domain-agnostic verification system.
 
 ---
 
@@ -180,17 +180,17 @@ Open `http://localhost:8501` in your browser. Paste your document and summary. C
 
 ## Roadmap
 
-**v0.1 — Current**
+**v0.1 - Current**
 - 3-stage pipeline: ingestion → verification → scoring
 - Legal Fidelity Score implementation
 - Streamlit web interface
 
-**v0.2 — In Development**
+**v0.2 - In Development**
 - Legal clause segmentation replacing naive chunking
 - Clause importance weighting
 - Hallucination taxonomy: Fabrication / Distortion / Exaggeration / Cross-reference error
 
-**v1.0 — Planned**
+**v1.0 - Planned**
 - Cross-clause dependency graph
 - Multi-judge ensemble verification
 - Benchmark mode on CUAD dataset
@@ -210,4 +210,4 @@ Published AI Researcher · Legal NLP · LLM Systems
 
 ## License
 
-MIT License — open for research and commercial use.
+MIT License - open for research and commercial use.
