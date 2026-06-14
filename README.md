@@ -10,7 +10,7 @@
 Large Language Models (LLMs) hallucinate. In most contexts this is inconvenient.  
 In legal, medical, financial, and clinical documents - it is dangerous.
 
-A payment term changed from 30 days to 15 days. A renewal clause invented from nothing. A liability limit silently altered. These are not hypothetical — they are the kinds of errors that cause lawsuits, regulatory violations, and financial loss.
+A payment term changed from 30 days to 15 days. A renewal clause invented from nothing. A liability limit silently altered. These are not hypothetical - they are the kinds of errors that cause lawsuits, regulatory violations, and financial loss.
 
 Existing NLP metrics like ROUGE and BLEU measure word overlap. They cannot detect semantic hallucinations. A summary can score high on ROUGE and still contain fabricated facts.
 
