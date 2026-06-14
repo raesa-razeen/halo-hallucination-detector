@@ -27,7 +27,7 @@ HALO takes two inputs:
 It returns:
 - A **Legal Fidelity Score** (0–100%) measuring how grounded the summary is
 - A **Hallucination Rate** showing the percentage of fabricated claims
-- A **clause-level audit trail** — every claim verified against the source with evidence
+- A **clause-level audit trail** - every claim verified against the source with evidence
 
 ---
 
@@ -194,7 +194,7 @@ Open `http://localhost:8501` in your browser. Paste your document and summary. C
 - Cross-clause dependency graph
 - Multi-judge ensemble verification
 - Benchmark mode on CUAD dataset
-- LegalHalluBench — open benchmark dataset release
+- LegalHalluBench - open benchmark dataset release
 
 ---
 
