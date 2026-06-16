@@ -104,7 +104,7 @@ if __name__ == "__main__":
     Payment must be made within 15 days. The contract renews automatically
     every year. Either party can terminate with 60 days notice."""
 
-    print("🔍 HALO - Hallucination Detection Running...\n")
+    print("HALO - Hallucination Detection Running...\n")
 
     # Stage 1 - Ingestion
     chunks = chunk_document(contract)
